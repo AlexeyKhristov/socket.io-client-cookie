@@ -36,8 +36,8 @@ module.exports.setCookies = function(newCookies) {
     cookies = newCookies;
 };
 
-module.exports.setHeaders = function(headers) {
-    headers = headers;
+module.exports.setHeaders = function(newHeaders) {
+    headers = newHeaders;
 };
 
 //Monkey patch that allows to add custom functions before calling socket.io constructor
