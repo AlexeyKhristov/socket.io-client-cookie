@@ -11,7 +11,7 @@ var xhrName = require.resolve(xhrPath);
 var cachedXhr = require.cache[xhrName].exports;
 
 //Cookies to be applied in the xhr
-var cookies;
+var cookies, headers;
 
 ////Monkey Patch
 var newXhr = function () {
@@ -22,8 +22,10 @@ var newXhr = function () {
     this.open = function () {
         stdOpen.apply(this, arguments);
         this.setRequestHeader('Cookie', cookies);
-
-    }
+        for(var key in headers) {
+            this.setRequestHeader(key, headers[key]);
+        }
+    };
 };
 
 newXhr.XMLHttpRequest = newXhr;
@@ -34,6 +36,9 @@ module.exports.setCookies = function(newCookies) {
     cookies = newCookies;
 };
 
+module.exports.setHeaders = function(headers) {
+    headers = headers;
+};
 
 //Monkey patch that allows to add custom functions before calling socket.io constructor
 
