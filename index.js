@@ -11,7 +11,7 @@ var xhrName = require.resolve(xhrPath);
 var cachedXhr = require.cache[xhrName].exports;
 
 //Cookies to be applied in the xhr
-var cookies;
+var cookies = '';
 var headers = {};
 
 ////Monkey Patch

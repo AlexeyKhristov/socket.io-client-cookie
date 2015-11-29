@@ -1,6 +1,6 @@
 {
   "name": "socket.io-client-cookies-headers",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Monkeypatch to send cookies and headers in socket.io-client handshake library from nodejs",
   "main": "index.js",
   "scripts": {
