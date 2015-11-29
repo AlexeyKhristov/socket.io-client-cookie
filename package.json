@@ -19,7 +19,7 @@
     "nodejs",
     "socket.io-client"
   ],
-  "author": "Rake Sharm",
+  "author": "Rake Sharm, Wang Hao",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AlexeyKhristov/socket.io-client-cookies-headers/issues"
