@@ -1,5 +1,5 @@
 // XMLHttpRequest to override.
-var xhrPath = '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest';
+var xhrPath = '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl';
 
 //Require it for the first time to store it in the require.cache
 require(xhrPath);

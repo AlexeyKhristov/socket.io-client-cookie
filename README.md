@@ -4,7 +4,7 @@ Send cookies from nodejs in the socket.io-client (Monkeypatch)
 
 ## What?
 
-SocketIO use a javascript implementation of xmlhttprequest (`github.com/driverdan/node-XMLHttpRequest`) which does not allow settings cookies due to the specification (http://www.w3.org/TR/XMLHttpRequest/) so this is monkey patch to set cookies and headers in the xmlhttprequest lib used by socket io (`./node_modules/socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest`)
+SocketIO use a javascript implementation of xmlhttprequest-ssl (`github.com/driverdan/node-XMLHttpRequest`) which does not allow settings cookies due to the specification (http://www.w3.org/TR/XMLHttpRequest/) so this is monkey patch to set cookies and headers in the xmlhttprequest-ssl lib used by socket io (`./node_modules/socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl`)
 
 Most of the info was taken from here:
 https://gist.github.com/jfromaniello/4087861
