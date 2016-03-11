@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var path = require('path');
 var allowedPaths = [
     '../xmlhttprequest-ssl', // npm@3
     '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl' // npm@2
@@ -10,7 +11,7 @@ var xhrPath;
 for (var i in allowedPaths) {
     var testPath = allowedPaths[i];
     try {
-        var stat = fs.statSync(testPath);
+        var stat = fs.statSync(path.resolve(__dirname, testPath));
         if (stat.isDirectory()) {
             xhrPath = testPath;
         }
