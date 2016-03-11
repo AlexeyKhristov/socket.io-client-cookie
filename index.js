@@ -1,5 +1,28 @@
+'use strict';
+
+var fs = require('fs');
+var allowedPaths = [
+  '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl',
+  '../engine.io-client/node_modules/xmlhttprequest-ssl',
+  '../xmlhttprequest-ssl'
+];
+
+var xhrPath;
+for (var i in allowedPaths) {
+    var testPath = allowedPaths[i];
+    try {
+        fs.accessSync(testPath);
+        xhrPath = testPath;
+        break;
+    } catch(e) {}
+}
+
+if (!xhrPath) {
+    throw new Error('xmlhttprequest-ssl module not found for socket.io-client-cookies-headers');
+}
+
 // XMLHttpRequest to override.
-var xhrPath = '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl';
+//var xhrPath = '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl';
 
 //Require it for the first time to store it in the require.cache
 require(xhrPath);
