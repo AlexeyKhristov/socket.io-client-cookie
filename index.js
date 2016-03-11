@@ -2,17 +2,18 @@
 
 var fs = require('fs');
 var allowedPaths = [
-  '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl',
-  '../engine.io-client/node_modules/xmlhttprequest-ssl',
-  '../xmlhttprequest-ssl'
+    '../xmlhttprequest-ssl', // npm@3
+    '../socket.io-client/node_modules/engine.io-client/node_modules/xmlhttprequest-ssl' // npm@2
 ];
 
 var xhrPath;
 for (var i in allowedPaths) {
     var testPath = allowedPaths[i];
     try {
-        fs.accessSync(testPath);
-        xhrPath = testPath;
+        var stat = fs.statSync(testPath);
+        if (stat.isDirectory()) {
+            xhrPath = testPath;
+        }
         break;
     } catch(e) {}
 }
